@@ -3,6 +3,11 @@ import datetime
 import html
 import json
 import os
+import re
+import urllib.request
+import urllib.parse
+from difflib import SequenceMatcher
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import sys
 import xml.etree.ElementTree as ET
@@ -77,6 +82,44 @@ def abstract(entry):
             return part['value']
     return ''
 
+def plain_text(value):
+    return ' '.join(re.sub(r'<[^>]+>', ' ', html.unescape(value)).split())
+
+def has_abstract(value):
+    text = plain_text(value)
+    if text.startswith('[原文摘要未提供]'):
+        return False
+    if 'Publication date:' in text and 'Author(s):' in text and 'Abstract' not in text:
+        return False
+    return len(text) > 100
+
+def supplement_abstract(item):
+    description = item.find('description')
+    if description is None:
+        description = ET.SubElement(item, 'description')
+    value = description.text or ''
+    if has_abstract(value):
+        return
+    title = item.findtext('title', '')
+    try:
+        query = urllib.parse.urlencode({'query.title': title, 'rows': 1, 'select': 'DOI,title,abstract'})
+        request = urllib.request.Request('https://api.crossref.org/works?' + query, headers={'User-Agent': 'PaperFeedSolidElectrolytes/1.0'})
+        with urllib.request.urlopen(request, timeout=12) as response:
+            matches = json.load(response)['message']['items']
+        if matches:
+            match = matches[0]
+            other_title = match.get('title', [''])[0]
+            normalize = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
+            same = SequenceMatcher(None, normalize(title), normalize(other_title)).ratio() >= 0.92
+            original = match.get('abstract', '')
+            if same and has_abstract(original):
+                description.text = plain_text(original)
+                return
+    except Exception as error:
+        print('Abstract metadata unavailable:', title[:60], type(error).__name__)
+    if not value.startswith('[原文摘要未提供]'):
+        description.text = '[原文摘要未提供] 出版社RSS及可用DOI元数据未提供论文摘要。' + plain_text(value)
+
 def fetch():
     Path('keywords.dat').write_text(KEYWORDS, encoding='utf-8')
     Path('journals.dat').write_text(SOURCES, encoding='utf-8')
@@ -94,6 +137,8 @@ def fetch():
     rss.get_existing_items = lambda: [e for e in original_existing() if rss.match_entry(e, queries)]
     rss.main()
     tree = ET.parse('filtered_feed.xml')
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(supplement_abstract, tree.findall('./channel/item')))
     channel = tree.getroot().find('channel')
     channel.find('title').text = TITLE
     channel.find('link').text = 'https://xpf94435-maker.github.io/paper-feed/'
@@ -114,7 +159,7 @@ def build():
         url = html.escape(url, quote=True)
         journal = html.escape(item.findtext('{http://purl.org/dc/elements/1.1/}source', ''))
         text = item.findtext('description', '')
-        detail = '<details><summary>原文摘要</summary><div>' + html.escape(text) + '</div></details>' if text else '<p>期刊 RSS 未提供摘要。</p>'
+        detail = '<details><summary>原文摘要</summary><div>' + html.escape(plain_text(text)) + '</div></details>' if has_abstract(text) else '<p>原文摘要未提供；请打开论文页面查看。</p>'
         cards.append(f'<article><small>{journal}</small><h2><a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a></h2>{detail}</article>')
     failures = ''.join('<li>' + html.escape(s['url']) + ': ' + html.escape(s.get('error') or '') + '</li>' for s in status['sources'] if not s['ok'])
     body = ''.join(cards) or '<p>本轮没有匹配条目。</p>'
