@@ -103,15 +103,23 @@ def supplement_abstract(item):
     title = item.findtext('title', '')
     try:
         query = urllib.parse.urlencode({'query.title': title, 'rows': 1, 'select': 'DOI,title,abstract'})
-        request = urllib.request.Request('https://api.crossref.org/works?' + query, headers={'User-Agent': 'PaperFeedSolidElectrolytes/1.0'})
+        identifier = item.findtext('guid', '') + ' ' + item.findtext('link', '')
+        doi_match = re.search(r'10\.\d{4,9}/[^\s?<#]+', identifier)
+        endpoint = 'https://api.crossref.org/works/' + urllib.parse.quote(doi_match.group(), safe='/') if doi_match else 'https://api.crossref.org/works?' + query
+        request = urllib.request.Request(endpoint, headers={'User-Agent': 'PaperFeedSolidElectrolytes/1.0'})
         with urllib.request.urlopen(request, timeout=12) as response:
-            matches = json.load(response)['message']['items']
+            message = json.load(response)['message']
+        matches = message.get('items', [message])
         if matches:
             match = matches[0]
             other_title = match.get('title', [''])[0]
             normalize = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
             same = SequenceMatcher(None, normalize(title), normalize(other_title)).ratio() >= 0.92
             original = match.get('abstract', '')
+            if same and not original and match.get('DOI') and not doi_match:
+                endpoint = 'https://api.crossref.org/works/' + urllib.parse.quote(match['DOI'], safe='/')
+                with urllib.request.urlopen(endpoint, timeout=12) as response:
+                    original = json.load(response)['message'].get('abstract', '')
             if same and has_abstract(original):
                 description.text = plain_text(original)
                 return
