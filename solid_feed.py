@@ -120,6 +120,16 @@ def supplement_abstract(item):
                 endpoint = 'https://api.crossref.org/works/' + urllib.parse.quote(match['DOI'], safe='/')
                 with urllib.request.urlopen(endpoint, timeout=12) as response:
                     original = json.load(response)['message'].get('abstract', '')
+            if same and not has_abstract(original) and match.get('DOI'):
+                try:
+                    endpoint = 'https://api.openalex.org/works/https://doi.org/' + urllib.parse.quote(match['DOI'], safe='/')
+                    with urllib.request.urlopen(endpoint, timeout=12) as response:
+                        record = json.load(response)
+                    index = record.get('abstract_inverted_index') or {}
+                    words = {position: word for word, positions in index.items() for position in positions}
+                    original = ' '.join(words[p] for p in sorted(words))
+                except Exception:
+                    pass
             if same and has_abstract(original):
                 description.text = plain_text(original)
                 return
