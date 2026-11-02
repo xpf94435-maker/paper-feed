@@ -1,32 +1,12 @@
 {
-  "updated_at": "2026-11-01T20:30:46.446092+00:00",
-  "total_sources": 36,
-  "successful_sources": 24,
-  "failed_sources": 12,
-  "fetched_entries": 3642,
-  "new_matches": 0,
-  "stored_items": 142,
+  "updated_at": "2026-11-02T02:26:38.075330+00:00",
+  "total_sources": 28,
+  "successful_sources": 18,
+  "failed_sources": 10,
+  "fetched_entries": 3304,
+  "new_matches": 54,
+  "stored_items": 54,
   "sources": [
-    {
-      "url": "https://www.nature.com/nature.rss",
-      "source": "Nature",
-      "ok": true,
-      "count": 75,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
-    {
-      "url": "https://www.nature.com/natcatal.rss",
-      "source": "Nature Catalysis",
-      "ok": true,
-      "count": 8,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
     {
       "url": "https://www.nature.com/nenergy.rss",
       "source": "Nature Energy",
@@ -40,16 +20,6 @@
     {
       "url": "https://www.nature.com/nmat.rss",
       "source": "Nature Materials",
-      "ok": true,
-      "count": 8,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
-    {
-      "url": "https://www.nature.com/nnano.rss",
-      "source": "Nature Nanotechnology",
       "ok": true,
       "count": 8,
       "error": null,
@@ -88,16 +58,6 @@
       "attempts": 1
     },
     {
-      "url": "https://www.nature.com/npjcompumats.rss",
-      "source": "npj Computational Materials",
-      "ok": true,
-      "count": 8,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
-    {
       "url": "https://www.nature.com/commsmat.rss",
       "source": "Communications Materials",
       "ok": true,
@@ -105,17 +65,7 @@
       "error": null,
       "warning": null,
       "http_status": 200,
-      "attempts": 2
-    },
-    {
-      "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=accacs",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
-      "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "attempts": 1
     },
     {
       "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=aelccp",
@@ -138,16 +88,6 @@
       "attempts": 2
     },
     {
-      "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=ancac3",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
-      "warning": null,
-      "http_status": 403,
-      "attempts": 2
-    },
-    {
       "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=cmatex",
       "source": "",
       "ok": false,
@@ -158,7 +98,17 @@
       "attempts": 2
     },
     {
-      "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=jaaucr",
+      "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=acsami",
+      "source": "",
+      "ok": false,
+      "count": 0,
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "warning": null,
+      "http_status": 403,
+      "attempts": 2
+    },
+    {
+      "url": "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=acssce",
       "source": "",
       "ok": false,
       "count": 0,
@@ -248,16 +198,6 @@
       "attempts": 1
     },
     {
-      "url": "https://onlinelibrary.wiley.com/feed/23669608/most-recent",
-      "source": "Wiley: Small Methods: Table of Contents",
-      "ok": true,
-      "count": 141,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
-    {
       "url": "https://feeds.rsc.org/rss/ee",
       "source": "",
       "ok": false,
@@ -288,18 +228,18 @@
       "attempts": 2
     },
     {
-      "url": "https://feeds.rsc.org/rss/cy",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "url": "https://rss.sciencedirect.com/publication/science/01672738",
+      "source": "ScienceDirect Publication: Solid State Ionics",
+      "ok": true,
+      "count": 21,
+      "error": null,
       "warning": null,
-      "http_status": null,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
-      "url": "https://rss.sciencedirect.com/publication/science/09263373",
-      "source": "ScienceDirect Publication: Applied Catalysis B: Environment and Energy",
+      "url": "https://rss.sciencedirect.com/publication/science/03787753",
+      "source": "ScienceDirect Publication: Journal of Power Sources",
       "ok": true,
       "count": 100,
       "error": null,
@@ -308,8 +248,8 @@
       "attempts": 1
     },
     {
-      "url": "https://rss.sciencedirect.com/publication/science/00219517",
-      "source": "ScienceDirect Publication: Journal of Catalysis",
+      "url": "https://rss.sciencedirect.com/publication/science/24058297",
+      "source": "ScienceDirect Publication: Energy Storage Materials",
       "ok": true,
       "count": 100,
       "error": null,
@@ -320,16 +260,6 @@
     {
       "url": "https://rss.sciencedirect.com/publication/science/22112855",
       "source": "ScienceDirect Publication: Nano Energy",
-      "ok": true,
-      "count": 100,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
-    {
-      "url": "https://rss.sciencedirect.com/publication/science/13596454",
-      "source": "ScienceDirect Publication: Acta Materialia",
       "ok": true,
       "count": 100,
       "error": null,
@@ -352,16 +282,6 @@
       "source": "ScienceDirect Publication: Matter",
       "ok": true,
       "count": 76,
-      "error": null,
-      "warning": null,
-      "http_status": 200,
-      "attempts": 1
-    },
-    {
-      "url": "https://www.cell.com/chem-catalysis/inpress.rss",
-      "source": "Chem Catalysis",
-      "ok": true,
-      "count": 19,
       "error": null,
       "warning": null,
       "http_status": 200,
