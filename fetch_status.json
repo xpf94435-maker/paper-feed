@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T02:29:28.852951+00:00",
+  "updated_at": "2026-11-02T02:33:56.385621+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
@@ -45,7 +45,7 @@
       "error": null,
       "warning": null,
       "http_status": 200,
-      "attempts": 1
+      "attempts": 2
     },
     {
       "url": "https://www.nature.com/natrevmats.rss",
