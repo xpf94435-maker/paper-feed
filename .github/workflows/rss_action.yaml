@@ -1,5 +1,4 @@
 name: Auto RSS Fetch
-
 on:
   schedule:
     - cron: '17 */8 * * *'
@@ -7,19 +6,13 @@ on:
   push:
     branches: [main]
     paths:
-      - 'keywords.dat'
-      - 'journals.dat'
+      - 'solid_feed.py'
       - 'get_RSS.py'
-      - 'journal_map.py'
-      - 'build_site.py'
-      - 'paper_feed_config.json'
       - 'requirements.txt'
       - '.github/workflows/rss_action.yaml'
-
 concurrency:
   group: paper-feed-${{ github.ref }}
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,30 +27,19 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Fetch and filter papers
-        env:
-          RSS_JOURNALS: ${{ secrets.RSS_JOURNALS }}
-          RSS_KEYWORDS: ${{ secrets.RSS_KEYWORDS }}
-        run: python get_RSS.py
-      - name: Optional AI summary
-        env:
-          AI_SUMMARY_ENABLED: ${{ secrets.AI_SUMMARY_ENABLED }}
-          AI_API_CONFIG: ${{ secrets.AI_API_CONFIG }}
-          AI_SUMMARY_PROMPT: ${{ secrets.AI_SUMMARY_PROMPT }}
-          PAPER_FEED_PUBLIC_BASE_URL: https://jueera.github.io/paper-feed
-        run: python ai_summary.py
-      - name: Build public reading page
-        run: python build_site.py
-      - name: Save RSS history
+      - name: Check syntax
+        run: python -m py_compile solid_feed.py get_RSS.py
+      - name: Fetch solid electrolyte papers
+        run: python solid_feed.py
+      - name: Build reading page with original abstracts
+        run: python solid_feed.py --build
+      - name: Save RSS history and configuration
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add filtered_feed.xml fetch_status.json
-          for f in ai_summary_feed.xml ai_summary.html ai_summary_state.json; do
-            if [ -f "$f" ]; then git add "$f"; fi
-          done
+          git add filtered_feed.xml fetch_status.json keywords.dat journals.dat
           if ! git diff --cached --quiet; then
-            git commit -m "Update personalized literature feed"
+            git commit -m "Update solid electrolyte literature feed"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
