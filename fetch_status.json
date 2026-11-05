@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T01:09:36.060536+00:00",
+  "updated_at": "2026-11-05T09:05:35.265954+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
@@ -202,7 +202,7 @@
       "source": "",
       "ok": false,
       "count": 0,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
       "warning": null,
       "http_status": null,
       "attempts": 2
@@ -212,7 +212,7 @@
       "source": "",
       "ok": false,
       "count": 0,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
       "warning": null,
       "http_status": null,
       "attempts": 2
@@ -222,7 +222,7 @@
       "source": "",
       "ok": false,
       "count": 0,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
       "warning": null,
       "http_status": null,
       "attempts": 2
