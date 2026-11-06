@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-06T09:00:22.737693+00:00",
+  "updated_at": "2026-11-06T16:56:45.462747+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
-  "fetched_entries": 1361,
-  "new_matches": 0,
-  "stored_items": 64,
+  "fetched_entries": 1445,
+  "new_matches": 10,
+  "stored_items": 74,
   "sources": [
     {
       "url": "https://www.nature.com/nenergy.rss",
@@ -151,7 +151,7 @@
       "url": "https://advanced.onlinelibrary.wiley.com/feed/16163028/most-recent",
       "source": "Wiley: Advanced Functional Materials: Table of Contents",
       "ok": true,
-      "count": 140,
+      "count": 220,
       "error": null,
       "warning": null,
       "http_status": 200,
@@ -261,7 +261,7 @@
       "url": "https://rss.sciencedirect.com/publication/science/22112855",
       "source": "ScienceDirect Publication: Nano Energy",
       "ok": true,
-      "count": 82,
+      "count": 86,
       "error": null,
       "warning": null,
       "http_status": 200,
