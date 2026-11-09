@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-09T09:17:09.804703+00:00",
+  "updated_at": "2026-11-09T17:15:09.595513+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
-  "fetched_entries": 1624,
+  "fetched_entries": 1625,
   "new_matches": 0,
   "stored_items": 80,
   "sources": [
@@ -241,7 +241,7 @@
       "url": "https://rss.sciencedirect.com/publication/science/03787753",
       "source": "ScienceDirect Publication: Journal of Power Sources",
       "ok": true,
-      "count": 99,
+      "count": 100,
       "error": null,
       "warning": null,
       "http_status": 200,
