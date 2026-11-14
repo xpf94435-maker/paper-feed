@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-14T08:55:49.301011+00:00",
+  "updated_at": "2026-11-14T16:46:38.820362+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
-  "fetched_entries": 2165,
-  "new_matches": 0,
-  "stored_items": 91,
+  "fetched_entries": 2125,
+  "new_matches": 1,
+  "stored_items": 92,
   "sources": [
     {
       "url": "https://www.nature.com/nenergy.rss",
@@ -231,7 +231,7 @@
       "url": "https://rss.sciencedirect.com/publication/science/01672738",
       "source": "ScienceDirect Publication: Solid State Ionics",
       "ok": true,
-      "count": 22,
+      "count": 23,
       "error": null,
       "warning": null,
       "http_status": 200,
@@ -241,7 +241,7 @@
       "url": "https://rss.sciencedirect.com/publication/science/03787753",
       "source": "ScienceDirect Publication: Journal of Power Sources",
       "ok": true,
-      "count": 98,
+      "count": 57,
       "error": null,
       "warning": null,
       "http_status": 200,
