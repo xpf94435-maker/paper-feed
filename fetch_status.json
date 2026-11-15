@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-14T16:46:38.820362+00:00",
+  "updated_at": "2026-11-15T01:10:37.861436+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
   "fetched_entries": 2125,
-  "new_matches": 1,
+  "new_matches": 0,
   "stored_items": 92,
   "sources": [
     {
