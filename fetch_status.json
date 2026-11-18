@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-18T01:21:39.513841+00:00",
+  "updated_at": "2026-11-18T09:10:30.223961+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
-  "fetched_entries": 2313,
+  "fetched_entries": 2402,
   "new_matches": 0,
   "stored_items": 106,
   "sources": [
@@ -191,7 +191,7 @@
       "url": "https://onlinelibrary.wiley.com/feed/16136829/most-recent",
       "source": "Wiley: Small: Table of Contents",
       "ok": true,
-      "count": 316,
+      "count": 405,
       "error": null,
       "warning": null,
       "http_status": 200,
