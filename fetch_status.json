@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-20T09:09:52.491183+00:00",
+  "updated_at": "2026-11-20T17:03:39.822468+00:00",
   "total_sources": 28,
-  "successful_sources": 12,
-  "failed_sources": 16,
-  "fetched_entries": 495,
-  "new_matches": 0,
-  "stored_items": 120,
+  "successful_sources": 18,
+  "failed_sources": 10,
+  "fetched_entries": 2537,
+  "new_matches": 3,
+  "stored_items": 123,
   "sources": [
     {
       "url": "https://www.nature.com/nenergy.rss",
@@ -139,63 +139,63 @@
     },
     {
       "url": "https://advanced.onlinelibrary.wiley.com/feed/15214095/most-recent",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "source": "Wiley: Advanced Materials: Table of Contents",
+      "ok": true,
+      "count": 386,
+      "error": null,
       "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
       "url": "https://advanced.onlinelibrary.wiley.com/feed/16163028/most-recent",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "source": "Wiley: Advanced Functional Materials: Table of Contents",
+      "ok": true,
+      "count": 459,
+      "error": null,
       "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
       "url": "https://onlinelibrary.wiley.com/feed/16146840/most-recent",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "source": "Wiley: Advanced Energy Materials: Table of Contents",
+      "ok": true,
+      "count": 166,
+      "error": null,
       "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
       "url": "https://onlinelibrary.wiley.com/feed/15213773/most-recent",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "source": "Wiley: Angewandte Chemie International Edition: Table of Contents",
+      "ok": true,
+      "count": 203,
+      "error": null,
       "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
       "url": "https://advanced.onlinelibrary.wiley.com/feed/21983844/most-recent",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "source": "Wiley: Advanced Science: Table of Contents",
+      "ok": true,
+      "count": 420,
+      "error": null,
       "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
       "url": "https://onlinelibrary.wiley.com/feed/16136829/most-recent",
-      "source": "",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "source": "Wiley: Small: Table of Contents",
+      "ok": true,
+      "count": 405,
+      "error": null,
       "warning": null,
-      "http_status": 403,
-      "attempts": 2
+      "http_status": 200,
+      "attempts": 1
     },
     {
       "url": "https://feeds.rsc.org/rss/ee",
@@ -251,7 +251,7 @@
       "url": "https://rss.sciencedirect.com/publication/science/24058297",
       "source": "ScienceDirect Publication: Energy Storage Materials",
       "ok": true,
-      "count": 82,
+      "count": 85,
       "error": null,
       "warning": null,
       "http_status": 200,
