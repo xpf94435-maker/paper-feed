@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-24T09:14:33.856877+00:00",
+  "updated_at": "2026-11-24T17:10:50.762563+00:00",
   "total_sources": 28,
   "successful_sources": 18,
   "failed_sources": 10,
-  "fetched_entries": 2792,
-  "new_matches": 0,
-  "stored_items": 133,
+  "fetched_entries": 2793,
+  "new_matches": 4,
+  "stored_items": 137,
   "sources": [
     {
       "url": "https://www.nature.com/nenergy.rss",
@@ -251,7 +251,7 @@
       "url": "https://rss.sciencedirect.com/publication/science/24058297",
       "source": "ScienceDirect Publication: Energy Storage Materials",
       "ok": true,
-      "count": 92,
+      "count": 93,
       "error": null,
       "warning": null,
       "http_status": 200,
